@@ -7,9 +7,6 @@ import CardList from "../components/CardList";
 import { Card, Modal, Row, Col, Container } from "react-bootstrap";
 import CreateCardForm from "../components/CreateCardForm";
 
-import { useDispatch, useSelector } from 'react-redux';
-import { START_CAR, STOP_CAR, ADD_CAR } from '../utils/actions';
-
 function CardWithModal() {
   const [showModal, setShowModal] = useState(false);
   const handleModalClose = () => setShowModal(false);
