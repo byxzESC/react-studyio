@@ -3,13 +3,12 @@ import { useParams } from "react-router-dom";
 import { useQuery } from "@apollo/client";
 import { QUERY_DECK } from "../utils/query";
 
-// import { useMutation } from "@apollo/client";
-// import {  UPDATE_CARD, DELETE_CARD } from "../utils/mutation";
-
-import logo from "../images/logo-yellow.png";
 import CardList from "../components/CardList";
 import { Card, Modal, Row, Col, Container } from "react-bootstrap";
 import CreateCardForm from "../components/CreateCardForm";
+
+import { useDispatch, useSelector } from 'react-redux';
+import { START_CAR, STOP_CAR, ADD_CAR } from '../utils/actions';
 
 function CardWithModal() {
   const [showModal, setShowModal] = useState(false);
@@ -23,19 +22,6 @@ function CardWithModal() {
       _id: deckParam,
     },
   });
-
-  // update/ delete
-  // const [questionBody, setQuestionBody] = useState({ question: questionBody });
-  //   const [answerBody, setAnswerBody] = useState({ answer: answerBody });
-
-
-  // const study = (event) => {
-  //   event.preventDefault();
-  //   const deckId = data?.findSingleDeck._id;
-  //   if (deckId) {
-  //     window.location.assign(`/${deckId}/study`);
-  //   }
-  // };
 
   const cards = data?.findSingleDeck.cards || [];
 
@@ -51,25 +37,6 @@ function CardWithModal() {
       {/* <Row> */}
       <Row className="g-4 m-1">
         <h3 className="page-title text-center">Study Cards</h3>
-        {/* STUDY BUTTON */}
-        {/* <Col
-          xs={12}
-          sm={12}
-          md={4}
-          lg={12}
-          className="d-flex justify-content-center"
-        > */}
-          {/* <Card className="text-center  m-3" onClick={study} id="study-btn">
-            <Card.Body>
-              <Card.Text className="card-page-text">
-                {" "}
-                <img className="study-logo" src={logo} alt="logo" />
-                Study
-              </Card.Text>
-            </Card.Body>
-          </Card> */}
-        {/* </Col> */}
-      {/* </Row> */}
 
       {/* create new card and Card List */}
       {/* <Row className="g-4 m-1"> */}
