@@ -6,12 +6,14 @@ import swal from "sweetalert";
 import Auth from "../utils/auth";
 import { useFormik } from "formik";
 import { signUpSchema } from "../utils/formValidationSchema";
+import { useNavigate } from "react-router-dom";
 
-const SignupForm = () => {
+const SignupForm = ({ handleModalClose }) => {
   const [createUser, { error }] = useMutation(CREATE_USER);
   if (error) {
     console.error("error on useMutation signup.js", error);
   }
+  const navigate = useNavigate();
   // set state for form validation
   // set state for alert
   const [validated] = useState(false);
@@ -32,10 +34,12 @@ const SignupForm = () => {
       });
       const currentUser = data.createUser.user.username;
       // redirect user to /:username/deck... please check auth.js - login function.
-      Auth.login(data.createUser.token, currentUser);
+      Auth.login(data.createUser.token);
 
       setShowAlert(false);
       swal("Success!", "Account created successfully!", "success");
+      handleModalClose();
+      navigate(`/${currentUser}/decks`)
     } catch (err) {
       console.error(err);
       setShowAlert(true);

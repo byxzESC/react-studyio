@@ -6,7 +6,7 @@ const mongoose = require('mongoose')
 const cardSchema = new Schema({
     deckId: {
         type: String,
-        required: true
+        required: false
     },
     question: {
         type: String,

@@ -1,5 +1,7 @@
 import decode from "jwt-decode";
 
+
+
 class AuthService {
   getProfile() {
     return decode(this.getToken());
@@ -27,15 +29,15 @@ class AuthService {
   }
 
   // Saves user token to localStorage
-  login(idToken, username) {
+  login(idToken) {
     localStorage.setItem("id_token", idToken);
     // window.location.assign(`/decks`);
-    window.location.assign(`/${username}/decks`);
+    // window.location.assign(`/${username}/decks`);
   }
 
   logout() {
     localStorage.removeItem("id_token");
-    window.location.assign("/");
+    // window.location.assign("/");
   }
 }
 

@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { Form, Modal, Button } from "react-bootstrap";
 import { CREATE_CARD } from "../utils/mutation";
 import { useMutation } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 
 const CreateCardForm = ({ deckParam }) => {
   const [questionBody, setQuestionBody] = useState("");
   const [answerBody, setAnswerBody] = useState("");
   const [createCard, { error }] = useMutation(CREATE_CARD);
-
+  const navigate = useNavigate();
+  
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {

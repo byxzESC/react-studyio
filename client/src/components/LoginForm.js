@@ -4,11 +4,13 @@ import { LOGIN_USER } from "../utils/mutation";
 import { useMutation } from "@apollo/client";
 import { useFormik } from "formik";
 import Auth from "../utils/auth";
+import { useNavigate } from "react-router-dom";
 
-const LoginForm = () => {
+const LoginForm = ({handleModalClose}) => {
   const [validated] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
   const [login, { error }] = useMutation(LOGIN_USER);
+  const navigate = useNavigate();
 
   const onSubmit = async (values, actions) => {
     try {
@@ -17,9 +19,10 @@ const LoginForm = () => {
       });
 
       const user = data.login.user.username;
-
       Auth.login(data.login.token);
-      window.location.assign(`/${user}/decks`);
+
+      handleModalClose();
+      navigate(`/${user}/decks`)
     } catch (error) {
       console.error(error);
       setShowAlert(true);

@@ -56,7 +56,7 @@ const Decks = () => {
           </Modal.Header>
 
           <Modal.Body id="contained-title-vcenter">
-            <CreateDeckForm username={usernameParam} />
+            <CreateDeckForm username={usernameParam} handleModalClose={() => setShowModal(false)} />
           </Modal.Body>
         </Modal>
         {/* list of our decks */}

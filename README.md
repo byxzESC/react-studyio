@@ -24,12 +24,14 @@
 | FAKER JS | [https://fakerjs.dev/](https://fakerjs.dev/)     |  
 | YUP JS | [https://www.npmjs.com/package/yup](https://www.npmjs.com/package/yup)     |  
 
+----------------------------------------------------------------------------
 ## Description
 
-    Study.io is a flash card app designed to help students study more effectively. With Study.io, users can create and organize their own flash card sets, or choose from a wide range of pre-made sets covering various topics and subjects. The app also includes features such as helping users to master the material and achieve better academic results. Whether you're preparing for a big exam or just looking to brush up on your knowledge, Study.io is the perfect tool to help you learn and retain information.
+Study.io is a flash card app designed to help students study more effectively. With Study.io, users can create and organize their own flash card sets, or choose from a wide range of pre-made sets covering various topics and subjects. The app also includes features such as helping users to master the material and achieve better academic results. Whether you're preparing for a big exam or just looking to brush up on your knowledge, Study.io is the perfect tool to help you learn and retain information.
 
-Here is the [deploy link]()
+Here is the [deploy link](https://studyioflash.herokuapp.com/)
 
+----------------------------------------------------------------------------
 ## Table of Contents (Optional)
 
 - [Installation](#installation)
@@ -43,26 +45,23 @@ Here is the [deploy link]()
 
 To install necessary dependencies, run the following command in root: 
 
-    npm install  
+    npm install 
+    npm run seed
 
+----------------------------------------------------------------------------
 ## Usage
 
-Step 1: Sign up for an account, here is the [Heroku Deploy link]()
+Step 1: Sign up for an account, here is the [Heroku Deploy link](https://studyioflash.herokuapp.com/)
 
 Step 2: Create your decks and cards
 
 example:
 
-![example image ]
+![ example image ](./client/public/example.png)
 
-Here is what happening in diagrams perspective: 
 
-![MCV flow picture]
 
-Here is simplicity view of models and relationships: 
-
-![models & relationships]
-
+----------------------------------------------------------------------------
 ## Team Members Info
 
 The groups github links:
@@ -78,9 +77,16 @@ The groups github links:
 
 ## License
 
-N/A
+----------------------------------------------------------------------------
+"THE BEER-WARE LICENSE" (Revision 42):
+<phk@FreeBSD.ORG> wrote this file.  As long as you retain this notice you
+can do whatever you want with this stuff. If we meet some day, and you think
+this stuff is worth it, you can buy me a beer in return.   Study.IO Team
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
 
 ## How to Contribute
+
 
 N/A
 
@@ -88,6 +94,7 @@ N/A
 
 N/A
 
+----------------------------------------------------------------------------
 ## Credit
 
 All this coding made possible by [Jerome Chenette](https://github.com/jeromechenette) and our fellow students who help each other along the way
